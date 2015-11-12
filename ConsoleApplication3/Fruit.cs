@@ -20,10 +20,9 @@ namespace ConsoleApplication3
         }
         public bool checkIfIsOnFruit(Snake snk)
         {
-            if (snk.getBuddy().First<Point>().isEqual(this.fruit))
+            if (snk.getHead().isEqual(this.fruit))
                 return true;
-            return false;
-            
+            return false;            
         }
     }
 }

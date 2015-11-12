@@ -18,5 +18,10 @@ namespace ConsoleApplication3
         {
             return this.Nodes;
         }
+
+        public Point getHead()
+        {
+            return this.Nodes.First<Point>();
+        }
     }
 }
