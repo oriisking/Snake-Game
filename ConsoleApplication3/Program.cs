@@ -9,9 +9,9 @@ namespace ConsoleApplication3
     {
         static void Main(string[] args)
         {
-            
 
 
+            Console.WriteLine("Shaxib is writing!");
             Console.ReadLine();
         
         }
