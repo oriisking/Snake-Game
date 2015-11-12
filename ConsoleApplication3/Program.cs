@@ -11,7 +11,7 @@ namespace ConsoleApplication3
         {
 
 
-            Console.WriteLine("Shaxib is writing!!");
+            Console.WriteLine("Shaxib is writing!");
             Console.ReadLine();
         
         }
