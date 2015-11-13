@@ -34,6 +34,7 @@ namespace ConsoleApplication3
                     return true;
             return false;
             Console.WriteLine("Check this you MOFOS");
+            Console.WriteLine("Check this you MOFOS");
         }
     }
 }
