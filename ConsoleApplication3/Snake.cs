@@ -7,7 +7,7 @@ namespace ConsoleApplication3
 {
     class Snake
     {
-        private List<Point> Nodes;
+        private List<Point> Nodes = new List<Point>();
         //בונה נחש ריק בו רק ראש, שממוקמת במקום רנדומאלי על המפה
         public Snake()
         {
@@ -37,6 +37,10 @@ namespace ConsoleApplication3
                 if (this.Nodes[i].isEqual(this.getHead()))
                     return true;
             return false;
+        }
+        public void Movement()
+        {
+            //ConsoleKey amir = ConsoleKey.RightArrow;
         }
     }
 }

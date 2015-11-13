@@ -27,5 +27,10 @@ namespace ConsoleApplication3
                 return true;
             return false;            
         }
+        public Point getLocation()
+        {
+            return this.fruit;
+        }
+
     }
 }
