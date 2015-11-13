@@ -26,12 +26,14 @@ namespace ConsoleApplication3
             return this.Nodes.First<Point>();
         }
         //בודק אם הנחש עולה על עצמו
+        
         public bool checkIfIsOnself()
         {
             for (int i = 1; i < this.Nodes.Count-1; i++)
                 if (this.Nodes[i].isEqual(this.getHead()))
-                    return true;              
+                    return true;
             return false;
+            Console.WriteLine("Check this you MOFOS");
         }
     }
 }
