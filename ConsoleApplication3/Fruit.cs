@@ -12,13 +12,13 @@ namespace ConsoleApplication3
         //בונאי של פרי המציב אותו במקום רנדומאלי
         public Fruit()
         {
-            this.fruit = new Point(rnd.Next(1,81),rnd.Next(1,26));
+            this.fruit = new Point(rnd.Next(1,101),rnd.Next(1,51));
         }
         //פעולה שמשנה את מיקום הפרי
         public void setLocation()
         {
-            this.fruit.setX(rnd.Next(1, 81));
-            this.fruit.setY(rnd.Next(1, 26));
+            this.fruit.setX(rnd.Next(1, 101));
+            this.fruit.setY(rnd.Next(1, 51));
         }
         //בודק אם ראש הנחש נמצא באותו המיקום של הפרי
         public bool checkIfIsOnFruit(Snake snk)

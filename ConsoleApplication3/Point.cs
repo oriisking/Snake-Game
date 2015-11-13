@@ -37,8 +37,11 @@ namespace ConsoleApplication3
             if (this.X == p.getX() && this.Y == p.getY())
                 return true;
             return false;
-            
-
+        }
+        public void setLocationByPoint(Point p)
+        {
+            this.X = p.getX();
+            this.Y = p.getY();
         }
     }
 }

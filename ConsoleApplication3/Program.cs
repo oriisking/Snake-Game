@@ -3,73 +3,91 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Timers;
-using System.Threading.Tasks;
+using System.Web;
 
-enum direction { Up, Down, Left, Right };
+public enum direction { Up, Down, Left, Right };
+
 namespace ConsoleApplication3
 {
     class Program
     {
-        static Timer tm = new Timer(500.0);
+        static Timer tm = new Timer(1000.0);
         static Snake snk = new Snake();
         static Fruit fru = new Fruit();
-        static ConsoleKey csk = new ConsoleKey();
-        public static void renderTheMap(Snake snk, Fruit fru)
-        {
-            Console.Clear();
-            string str = "";
-            for (int i = 1; i < 26; i++)
-            {
-                for (int j = 1; j < 81; j++)
-                {
-                    foreach (Point p in snk.getBuddy())
-                    {
-                        if (p.isEqual(new Point(j, i)))
-                        {
-                            str += "O";
-                            break;
-                        }
-                        else
-                        {
-                            if (fru.getLocation().isEqual(new Point(j, i)))
-                            {
-                                str += "X";
-                                break;
-                            }
-                            else
-                            {
-                                str += " ";
-                                break;
-                            }
-                        }
-                        
-                    }
-                    
-                }
-            }
-            Console.WriteLine(str);
-            
-        }
+        static ConsoleKey cki = new ConsoleKey();
         static void makeMove()
         {
+            if (Console.KeyAvailable)
+                cki = Console.ReadKey().Key;
+            do
+            {
+                snk.makeASingleMove(direction.Right);
+            } while (cki == ConsoleKey.RightArrow && snk.getBuddy()[0].getX() < 100);
+            do
+            {
+                snk.makeASingleMove(direction.Left);
+            } while (cki == ConsoleKey.LeftArrow);
+            do
+            {
+                snk.makeASingleMove(direction.Up);
+            } while (cki == ConsoleKey.UpArrow);
+            do
+            {
+                snk.makeASingleMove(direction.Down);
+            } while (cki == ConsoleKey.DownArrow);    
+            //switch (cki)
+            //{
+
+            //    case ConsoleKey.DownArrow:
+            //        snk.makeASingleMove(direction.Down);
+            //        break;
+            //    case ConsoleKey.LeftArrow:
+            //        snk.makeASingleMove(direction.Left);
+            //        break;
+            //    case ConsoleKey.RightArrow:
+            //        snk.makeASingleMove(direction.Right);
+            //        break;
+            //    case ConsoleKey.UpArrow:
+            //        snk.makeASingleMove(direction.Up);
+            //        break;
+
+            //}
+            
             
         }
+        public static void renderSnake()
+        {
+            foreach (Point p in snk.getBuddy())
+            {
+                Console.SetCursorPosition(p.getX(), p.getY());
+                Console.Write("X");
+            }
+            Console.SetCursorPosition(fru.getLocation().getX(), fru.getLocation().getY());
+            Console.Write("O");
+        }
+   
         static void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
         {
             
-            renderTheMap(snk,fru);
-            
-
+            Console.Clear();
+            renderSnake();
+            makeMove();
         }
 
         static void Main(string[] args)
         {
+
+            
+            Console.WindowHeight = 50;
+            Console.WindowWidth = 100;
+
+            
+            Console.BufferHeight = Console.WindowHeight;
+            Console.BufferWidth = Console.WindowWidth;
+            cki = ConsoleKey.UpArrow;
             fru.setLocation();
             tm.Elapsed += OnTimedEvent;
-            Random rnd = new Random();
-            fru.setLocation();
             tm.Start();
-            //renderTheMap(snk, fru);
             Console.Read();
 
         }

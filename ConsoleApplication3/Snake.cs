@@ -12,7 +12,7 @@ namespace ConsoleApplication3
         public Snake()
         {
             Random rnd = new Random();
-            Point head = new Point(rnd.Next(1,81),rnd.Next(1,26));
+            Point head = new Point(rnd.Next(1, Console.WindowHeight - 1), rnd.Next(1, Console.WindowWidth - 1));
             this.Nodes.Add(head);
         }
         //מחזיר את רשימת החוליות שמרכיבות את הנחש
@@ -38,9 +38,44 @@ namespace ConsoleApplication3
                     return true;
             return false;
         }
-        public void Movement()
+        
+        //פעולה שמזיזה את הנחש בהתאם לכיוון שהיא מקבלת
+        public void makeASingleMove(direction dir)
         {
-            //ConsoleKey amir = ConsoleKey.RightArrow;
+
+            switch (dir)
+            {
+                case direction.Up:
+                    for (int i = this.Nodes.Count - 1; i > 0 ; i--)
+                    {
+                        this.Nodes[i].setLocationByPoint(this.Nodes[i - 1]);
+                    }
+                    this.Nodes[0].setY(this.Nodes[0].getY() - 1);
+                    break;
+                case direction.Down:
+                    for (int i = this.Nodes.Count - 1; i > 0; i--)
+                    {
+                        this.Nodes[i].setLocationByPoint(this.Nodes[i - 1]);
+                    }
+                    this.Nodes[0].setY(this.Nodes[0].getY() + 1);
+                    break;
+                case direction.Right:
+                    int x = 1;
+
+                    for (int i = this.Nodes.Count - 1; i > 0; i--)
+                    {
+                        this.Nodes[i].setLocationByPoint(this.Nodes[i - 1]);
+                    }
+                    this.Nodes[0].setX(x + this.Nodes[0].getX());
+                    break;
+                case direction.Left:
+                    for (int i = this.Nodes.Count - 1; i > 0; i--)
+                    {
+                        this.Nodes[i].setLocationByPoint(this.Nodes[i - 1]);
+                    }
+                    this.Nodes[0].setX(this.Nodes[0].getX() - 1);
+                    break;
+            }
         }
     }
 }
