@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Timers;
+using System.Threading.Tasks;
+
 enum direction { Up, Down, Left, Right };
 namespace ConsoleApplication3
 {
@@ -11,6 +13,7 @@ namespace ConsoleApplication3
         static Timer tm = new Timer(500.0);
         static Snake snk = new Snake();
         static Fruit fru = new Fruit();
+        static ConsoleKey csk = new ConsoleKey();
         public static void renderTheMap(Snake snk, Fruit fru)
         {
             Console.Clear();
@@ -47,21 +50,22 @@ namespace ConsoleApplication3
             Console.WriteLine(str);
             
         }
+        static void makeMove()
+        {
+            
+        }
         static void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
         {
             
             renderTheMap(snk,fru);
-            ConsoleKey csk = new ConsoleKey();
+            
 
         }
 
         static void Main(string[] args)
         {
             fru.setLocation();
-
-
             tm.Elapsed += OnTimedEvent;
-            
             Random rnd = new Random();
             fru.setLocation();
             tm.Start();
