@@ -25,16 +25,18 @@ namespace ConsoleApplication3
         {
             return this.Nodes.First<Point>();
         }
+        //מוסיפה נקודה לסוף הנחש
+        public void addNewNode(Point p)
+        {
+            this.Nodes.Add(p);
+        }
         //בודק אם הנחש עולה על עצמו
-        
         public bool checkIfIsOnself()
         {
             for (int i = 1; i < this.Nodes.Count-1; i++)
                 if (this.Nodes[i].isEqual(this.getHead()))
                     return true;
             return false;
-            Console.WriteLine("Check this you MOFOS");
-            Console.WriteLine("Check this you MOFOS");
         }
     }
 }
