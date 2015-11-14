@@ -16,6 +16,7 @@ namespace ConsoleApplication3
         static Fruit fru = new Fruit();
         static Thread thr = new Thread(new ThreadStart(checkTheKey));
         static Timer tmr;
+        static int speed = 100;
         public static void checkTheKey()
         {
             while (true)
@@ -53,8 +54,10 @@ namespace ConsoleApplication3
         }
         public static void renderSnake()
         {
+            Console.ForegroundColor = ConsoleColor.Magenta;
             switch (snk.getDir2())
             {
+
                 case direction.Down:
                     Console.SetCursorPosition(snk.getBuddy()[0].getX(), snk.getBuddy()[0].getY());
                     Console.Write("V");
@@ -74,7 +77,7 @@ namespace ConsoleApplication3
                 default:
                     break;
             }
-            for (int i = 1; i < snk.getBuddy().Count - 1; i++)
+            for (int i = 1; i <= snk.getBuddy().Count - 1; i++)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.SetCursorPosition(snk.getBuddy()[i].getX(), snk.getBuddy()[i].getY());
@@ -95,6 +98,10 @@ namespace ConsoleApplication3
             {
                 snk.addNewNode(snk.getLastNode());
                 fru.setLocation();
+                if (speed > 10)
+                {
+                    tmr.Change(1, speed - 5);
+                }
             }
         }
         public static void checkIfEatHimself()
@@ -107,10 +114,128 @@ namespace ConsoleApplication3
                     thr.Abort();
                     tmr.Change(10000000, 10000000);
                     Console.Clear();
+                    #region fuck_you
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("FUCK YOU!!!!!");
+                    Console.Write("FUCK YOU!!!!!");
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("FUCK YOU!!!!!");
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write("FUCK YOU!!!!!");
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.Write("FUCK YOU!!!!!");
+                    #endregion
                     Console.ReadKey();
                 }
             }
@@ -127,7 +252,7 @@ namespace ConsoleApplication3
             thr.Start();
             AutoResetEvent are = new AutoResetEvent(true);
             TimerCallback tcb = OnTimedEvent;
-            tmr = new Timer(tcb, are, 1000, 50);
+            tmr = new Timer(tcb, are, 1000, speed);
             fru.setLocation();
         }
     }

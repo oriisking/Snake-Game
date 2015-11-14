@@ -12,20 +12,20 @@ namespace ConsoleApplication3
         //בונאי של פרי המציב אותו במקום רנדומאלי
         public Fruit()
         {
-            this.fruit = new Point(rnd.Next(1,101),rnd.Next(1,51));
+            this.fruit = new Point(rnd.Next(1, 100), rnd.Next(1, 50));
         }
         //פעולה שמשנה את מיקום הפרי
         public void setLocation()
         {
-            this.fruit.setX(rnd.Next(1, 101));
-            this.fruit.setY(rnd.Next(1, 51));
+            this.fruit.setX(rnd.Next(1, 100));
+            this.fruit.setY(rnd.Next(1, 50));
         }
         //בודק אם ראש הנחש נמצא באותו המיקום של הפרי
         public bool checkIfIsOnFruit(Snake snk)
         {
             if (snk.getHead().isEqual(this.fruit))
                 return true;
-            return false;            
+            return false;
         }
         public Point getLocation()
         {
