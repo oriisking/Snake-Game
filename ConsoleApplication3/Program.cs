@@ -101,6 +101,7 @@ namespace ConsoleApplication3
                 if (speed > 10)
                 {
                     tmr.Change(1, speed - 5);
+                    speed -= 5;
                 }
             }
         }
